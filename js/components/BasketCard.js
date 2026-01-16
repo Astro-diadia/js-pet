@@ -11,22 +11,39 @@ export default class Card {
 
     getCard(whereToAppend) {
         this.cardEl = document.createElement('div')
+        this.cardEl.className = 'basket__item'
         whereToAppend.append(this.cardEl)
 
-        this.cardEl.innerHTML = `
-            <li class="basket__item">
-                <div class="basket__img">
-                    <img src="${this.img}" alt="Фотография товара" height="60" width="60">
-                </div>
-                <span class="basket__name">${this.name}</span>
-                <span class="basket__price">${this.priceNew}</span>
-                <button class="basket__item-close btn btn--close" type="button">
-                    <svg class="main-menu__icon" width="24" height="24" aria-hidden="true">
-                        <use xlink:href="images/sprite.svg#icon-close"></use>
-                    </svg>
-                </button>
-            </li>
+        const imgWrapper = document.createElement('div')
+        imgWrapper.className = 'basket__img'
+
+        const img = document.createElement('img')
+        img.src = this.img
+        img.alt = 'Фотография товара'
+        img.width = 60
+        img.height = 60
+
+        imgWrapper.append(img)
+
+        const name = document.createElement('span')
+        name.className = 'basket__name'
+        name.textContent = this.name
+
+        const price = document.createElement('span')
+        price.className = 'basket__price'
+        price.textContent = this.priceNew
+
+        const btn = document.createElement('button')
+        btn.className = 'basket__item-close btn btn--close'
+        btn.type = 'button'
+
+        btn.innerHTML = `
+            <svg class="main-menu__icon" width="24" height="24" aria-hidden="true">
+                <use xlink:href="images/sprite.svg#icon-close"></use>
+            </svg>
         `
+
+        this.cardEl.append(imgWrapper, name, price, btn)
     }
 
     getBtn() {
