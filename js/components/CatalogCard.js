@@ -19,7 +19,7 @@ export default class Card {
     this.cardEl.innerHTML = `
             <div class="product-card">
                 <div class="product-card__visual">
-                  <img class="product-card__img" src="${this.image}" height="436" width="290"
+                  <img class="product-card__img" src="" height="436" width="290"
                        alt="Изображение товара">
                   <div class="product-card__more">
                     <button href="#" class="product-card__link btn btn--icon">
@@ -34,17 +34,17 @@ export default class Card {
                   </div>
                 </div>
                 <div class="product-card__info">
-                  <h2 class="product-card__title">${this.name}</h2>
+                  <h2 class="product-card__title"></h2>
                 <span class="product-card__old">
-                  <span class="product-card__old-number">${this.priceOld}</span>
+                  <span class="product-card__old-number"></span>
                   <span class="product-card__old-add">₽</span>
                 </span>
                 <span class="product-card__price">
-                  <span class="product-card__price-number">${this.priceNew}</span>
+                  <span class="product-card__price-number"></span>
                   <span class="product-card__price-add">₽</span>
                 </span>
                   <div class="product-card__tooltip tooltip">
-                    <button class="tooltip__btn" id="${this.id}" aria-label="Показать подсказку">
+                    <button class="tooltip__btn" id="" aria-label="Показать подсказку">
                       <svg class="tooltip__icon" width="5" height="10" aria-hidden="true">
                         <use xlink:href="images/sprite.svg#icon-i"></use>
                       </svg>
@@ -53,13 +53,13 @@ export default class Card {
                       <span class="tooltip__text">Наличие товара по городам:</span>
                       <ul class="tooltip__list">
                         <li class="tooltip__item">
-                          <span class="tooltip__text">Москва: <span class="tooltip__count">${this.avbM}</span></span>
+                          <span class="tooltip__text">Москва: <span class="tooltip__count tooltip__count--mosc">${this.avbM}</span></span>
                         </li>
                         <li class="tooltip__item">
-                          <span class="tooltip__text">Оренбург: <span class="tooltip__count">${this.avbOr}</span></span>
+                          <span class="tooltip__text">Оренбург: <span class="tooltip__count tooltip__count--or">${this.avbOr}</span></span>
                         </li>
                         <li class="tooltip__item">
-                          <span class="tooltip__text">Санкт-Петербург: <span class="tooltip__count">${this.avbSP}</span></span>
+                          <span class="tooltip__text">Санкт-Петербург: <span class="tooltip__count tooltip__count--sp">${this.avbSP}</span></span>
                         </li>
                       </ul>
                     </div>
@@ -67,6 +67,16 @@ export default class Card {
                 </div>
             </div>
         `
+
+    this.cardEl.querySelector('.product-card__img').src = this.image
+    this.cardEl.querySelector('.product-card__title').textContent = this.name
+    this.cardEl.querySelector('.product-card__old-number').textContent = this.priceOld
+    this.cardEl.querySelector('.product-card__price-number').textContent = this.priceNew
+    this.cardEl.querySelector('.tooltip__btn').id = this.id
+    this.cardEl.querySelector('.tooltip__count--mosc').textContent = this.avbM
+    this.cardEl.querySelector('.tooltip__count--or').textContent = this.avbOr
+    this.cardEl.querySelector('.tooltip__count--sp').textContent = this.avbSP
+
     return this.cardEl
   }
 

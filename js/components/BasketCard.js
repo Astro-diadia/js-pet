@@ -10,7 +10,7 @@ export default class Card {
     }
 
     getCard(whereToAppend) {
-        this.cardEl = document.createElement('div')
+        this.cardEl = document.createElement('li')
         this.cardEl.className = 'basket__item'
         whereToAppend.append(this.cardEl)
 
