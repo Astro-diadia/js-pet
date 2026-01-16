@@ -3,7 +3,7 @@ import { deleteFromBasket } from "./BasketManipulation.js"
 export default class Card {
     constructor(_id, _name, _price, _image, _place) {
         this.id = _id
-        this.img = _image
+        this.img = _image || 'images/no-image.jpg'
         this.name = _name
         this.priceNew = _price.new
         this.place = _place
