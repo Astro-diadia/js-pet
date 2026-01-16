@@ -53,13 +53,13 @@ export default class Card {
                       <span class="tooltip__text">Наличие товара по городам:</span>
                       <ul class="tooltip__list">
                         <li class="tooltip__item">
-                          <span class="tooltip__text">Москва: <span class="tooltip__count tooltip__count--mosc">${this.avbM}</span></span>
+                          <span class="tooltip__text">Москва: <span class="tooltip__count tooltip__count--mosc"></span></span>
                         </li>
                         <li class="tooltip__item">
-                          <span class="tooltip__text">Оренбург: <span class="tooltip__count tooltip__count--or">${this.avbOr}</span></span>
+                          <span class="tooltip__text">Оренбург: <span class="tooltip__count tooltip__count--or"></span></span>
                         </li>
                         <li class="tooltip__item">
-                          <span class="tooltip__text">Санкт-Петербург: <span class="tooltip__count tooltip__count--sp">${this.avbSP}</span></span>
+                          <span class="tooltip__text">Санкт-Петербург: <span class="tooltip__count tooltip__count--sp"></span></span>
                         </li>
                       </ul>
                     </div>
